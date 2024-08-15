@@ -1,0 +1,7 @@
+.DS_Store
+text_classification_BERT/DATA/텍스트_윤리검증_데이터/텍스트_윤리검증_train.csv
+text_classification_BERT/DATA/텍스트_윤리검증_데이터/텍스트_윤리검증_valid.csv
+text_classification_BERT/DATA/텍스트_윤리검증_데이터/emotion_labeld_text.csv
+text_classification_BERT/DATA/텍스트_윤리검증_데이터/emotion_labeld_valid.csv
+text_classification_BERT/MODEL/텍스트_윤리검증_모델/results/*
+text_classification_BERT/MODEL/텍스트_윤리검증_모델/logs/*
