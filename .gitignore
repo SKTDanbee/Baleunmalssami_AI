@@ -6,3 +6,4 @@ text_classification_BERT/DATA/텍스트_윤리검증_데이터/emotion_labeld_va
 text_classification_BERT/DATA/텍스트_윤리검증_데이터/01.데이터
 text_classification_BERT/MODEL/텍스트_윤리검증_모델/results/*
 text_classification_BERT/MODEL/텍스트_윤리검증_모델/logs/*
+report_llm/KakaoTalk_20240815_1527_10_362_현동.txt
