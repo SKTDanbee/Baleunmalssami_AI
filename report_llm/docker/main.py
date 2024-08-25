@@ -4,8 +4,12 @@ from fastapi import FastAPI, UploadFile, File
 import report_generate as report_generate
 import shutil
 from datetime import datetime
+from DB_models import engine
+import DB_models
 
 app = FastAPI()
+
+DB_models.Base.metadata.create_all(bind=engine)
 
 @app.get("/")
 def read_root():

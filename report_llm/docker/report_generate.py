@@ -12,22 +12,15 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings # Now this import should work
 
 from langchain.prompts import (
-    PromptTemplate,
     ChatPromptTemplate,
     SystemMessagePromptTemplate,
-    AIMessagePromptTemplate,
     HumanMessagePromptTemplate,
 )
 
-from langchain.schema import (
-    AIMessage,
-    HumanMessage,
-    SystemMessage
-)
 
-openai.api_key = os.getenv('api_key')
+openai.api_key = os.getenv('API_KEY')
 user_agent = os.getenv('USER_AGENT')
-
+print(openai.api_key)
 if not user_agent:
     print("USER_AGENT environment variable not set, consider setting it to identify your requests.")
 else:
@@ -122,7 +115,7 @@ def kind_report(num=0):
     1. 사이버 폭력 의심 여부 / (높음, 중간, 낮음 중 하나) 
     2. 사이버 폭력 의심 행위 / (사이버 폭력을 행한 시간과 발화 내용 / 상황 정리) 
     3. 사이버 폭력 가해 유형 / (자녀에게서 확인 할 수 있는 가해 유형)
-    4. 교육 방법 / (초등학생 사이버 폭력 교육 방법 추천 )
+    4. 교육 방법 / (초등학생 사이버 폭력 교육 방법 추천,사이버 폭력 관련 기관 추천 )
 
     위 4가지 내용 중 해당되는 내용이 없다면 빈칸으로 남겨줘.
     json 형식으로 출력해줘.
@@ -168,7 +161,7 @@ def kind_report(num=0):
 
     1. 전반적인 언어 습관 / (설명 : 부모가 자녀의 언어습관을 확인할 용도)
     2. 비속어 사용 습관 (비속어를 사용한 실제 시간, 상황, 발화 내용에 기반한 설명)
-    3. 자녀 언어 습관 교육 방법과 팁 (가해 예방 교육, 사이버 폭력 관련 기관 등)
+    3. 자녀 언어 습관 교육 방법과 팁 (가해 예방 교육)
 
     위 3가지 내용 중 해당되는 내용이 없다면 빈칸으로 남겨줘.
     json 형식으로 출력해줘.
@@ -181,7 +174,7 @@ def kind_report(num=0):
         return SystemMessagePromptTemplate.from_template(cyber_string_template)
 
 # Changed this function to accept a filename parameter
-def generate_report(file_name):
+def generate_report(file_name,kind):
 
     cyber_file_list = [file_name]
 
@@ -221,7 +214,7 @@ def generate_report(file_name):
     )
 
     human_message_prompt = HumanMessagePromptTemplate.from_template('')
-    system_message_prompt = kind_report(1) # 고정 입력 # report 종류 선택 #1 부모 #2아이 #3사이버폭력
+    system_message_prompt = kind_report(kind) # 고정 입력 # report 종류 선택 #1 부모 #2아이 #3사이버폭력
 
     chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt]) # 1,2 합
 
