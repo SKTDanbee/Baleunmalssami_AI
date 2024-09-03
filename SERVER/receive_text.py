@@ -24,9 +24,9 @@ from langchain.prompts import (
     AIMessagePromptTemplate,
 )
 
-api_key = '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'
+api_key = ''
 llm = ChatOpenAI(model_name="gpt-4o", temperature=0, openai_api_key=api_key)
-child_id  = "email"
+child_id  = "test_user_id"
 
 # Set device to GPU if available
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -123,7 +123,7 @@ def response_text(current_text, child_id):
     report_text = current_text
     end_point = f"https://ansim-app-f6abfdhmexe8ged3.koreacentral-01.azurewebsites.net/create_txt/?report_text={report_text}&child_id={child_id}"
     response = requests.post(end_point)
-    print(response.text)
+    print("post Text")
        
     
 
