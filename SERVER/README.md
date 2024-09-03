@@ -1,2 +1,2 @@
 - 이 서버는 노트북과 스마트폰이 소켓 통신하게 되어 있는 서버입니다. 기존에 있는 LLM_SERVER는 Azure에 올라가서 통신합니다.
-- 이 파일을 실행시키고 안드로이드 스튜디오상에서 [Constants.kt](Ansim_KeyPad_Keypad-main/MyKeyboard/app/src/main/java/com/myhome/rpgkeyboard/keyboardview/Constants.kt) 파일에 있는 IP를 맞게 등록해줘야지 키패드 상의 기능들이 잘 작동합니다.
+- 이 파일을 실행시키고 안드로이드 스튜디오상에서 [Constants.kt]([Ansim_KeyPad_Keypad-main/MyKeyboard/app/src/main/java/com/myhome/rpgkeyboard/keyboardview/Constants.kt](https://github.com/SKTDanbee/Baleunmalssami_Keypad/blob/main/Ansim_KeyPad_Keypad-main/MyKeyboard/app/src/main/java/com/myhome/rpgkeyboard/keyboardview/Constants.kt)) 파일에 있는 IP를 맞게 등록해줘야지 키패드 상의 기능들이 잘 작동합니다.
